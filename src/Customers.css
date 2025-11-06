@@ -1,0 +1,50 @@
+/* Archivo: src/Customers.css */
+
+.customers-section {
+    background-color: var(--color-base-dark);
+    padding: 4rem 0; 
+    text-align: center;
+    /* Ya no tiene los bordes (Solución anterior) */
+  }
+  
+  /* ========================================= */
+  /* SOLUCIÓN A LA TIPOGRAFÍA */
+  /* * En lugar de sobreescribir los estilos, 
+   * solo usaremos esta clase para añadir el 
+   * espacio inferior que necesitamos.
+   * * Las fuentes, grosores y mayúsculas
+   * ahora vendrán de '.section-subtitle' en tu index.css
+   */
+  .customers-subtitle {
+    margin-bottom: 3rem; 
+    
+    /* * Eliminamos de aquí:
+     * - text-transform: uppercase;
+     * - letter-spacing: 0.5px;
+     * - font-weight: 500;
+     * - font-family: inherit;
+    */
+  }
+  /* ========================================= */
+  
+  
+  .logo-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6rem; 
+  }
+  
+  .logo-bar img {
+    max-height: 120px;
+    max-width: 350px; 
+    width: auto;
+    height: auto; 
+    
+    /* Ya no tiene el filtro grayscale (Solución anterior) */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* El bloque 'hover' ya está eliminado (Solución anterior) */

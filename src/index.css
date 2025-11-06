@@ -1,0 +1,806 @@
+/* Archivo: src/index.css */
+/* (Incluye todas las correcciones y nuevas características) */
+
+/* 1. PALETA "SUMA DOTS" */
+:root {
+  --color-base-dark: #121212;
+  --color-base-dark-2: #1A202C;
+  --color-base-dark-3: #2D3748;
+  --color-accent-suma: #7F56D9;
+  --color-accent-suma-hover: #6941C6; 
+  --gradient-cta-bg: linear-gradient(180deg, #7F56D9 0%, #6941C6 100%);
+  --color-text-light: #FFFFFF;
+  --color-text-secondary: #A0AEC0;
+  --color-border: #2D3748;
+}
+
+/* 2. ESTILOS GLOBALES */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-base-dark); 
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+  background-color: var(--color-base-dark);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none; 
+}
+/* Estilo para la imagen dentro del logo */
+.logo img {
+  height: 72px;
+  width: auto;
+  display: block; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--color-text-light);
+}
+
+/* --- Botón CTA (Morado) - Estilo base --- */
+.cta-button {
+  background: var(--gradient-cta-bg);
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.cta-button:hover {
+  background: var(--color-accent-suma-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+
+/* --- 1. Sección Hero (CON VIDEO DE FONDO) --- */
+.hero {
+  padding: 140px 0 160px 0;
+  position: relative;
+  overflow: hidden; 
+  text-align: center;
+}
+.hero-video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+  animation: kenburns-effect 20s ease-in-out infinite alternate;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.8); 
+  z-index: 2;
+}
+.hero-content-centered {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 3.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-weight: 800;
+  max-width: 800px;
+}
+.hero h1 .highlight-dots {
+  color: var(--color-accent-suma);
+}
+.hero .subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+.hero .hero-cta {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+/* === Botón del Hero con Glow === */
+.hero .cta-button {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  will-change: transform;
+}
+
+/* Efecto de "iluminación" (glow) y movimiento */
+.hero .cta-button:hover {
+  background: var(--color-accent-suma-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(127, 86, 217, 0.5);
+}
+
+/* SECCIÓN ELIMINADA (Estilos ya no son necesarios pero no molestan) */
+.social-proof {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+.proof-item {
+  font-size: 0.9rem;
+  color: #E2E8F0;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-width: 140px;
+  text-align: center;
+}
+.proof-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.proof-item strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--color-accent-suma);
+  margin-bottom: 5px;
+}
+.hero-illustration { display: none; }
+.hero-sphere { display: none; }
+
+
+/* --- 2. Sección Servicios (LÓGICA INVERSA) --- */
+.services {
+  padding: 80px 0;
+  background-color: var(--color-base-dark);
+}
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--color-text-light);
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 50px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.service-card {
+  background-color: var(--color-base-dark-2); 
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.service-card:hover {
+  background-color: var(--color-base-dark-3);
+  border-color: var(--color-accent-suma);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-accent-suma);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.service-card p {
+    color: var(--color-text-secondary);
+}
+.service-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent-suma);
+  margin-bottom: 20px;
+}
+.service-icon-circle { 
+  display: none; 
+} 
+
+
+/* --- 3. Sección Proceso (CICLO SVG + TEXTO AL LADO) --- */
+.process {
+  padding: 80px 0;
+  background-color: var(--color-base-dark);
+  color: var(--color-text-light);
+}
+.process .section-title {
+  color: var(--color-text-light);
+  text-align: center;
+}
+.process .section-subtitle {
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+}
+.process-cycle-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 80px; 
+}
+.process-svg-wrapper {
+  flex: 1; 
+  max-width: 450px;
+}
+
+/* === Animación del Proceso === */
+.process-cycle-svg {
+  width: 100%;
+  height: auto;
+}
+.process-rotating-parts {
+  animation: spin 30s linear infinite;
+  transform-origin: center; 
+}
+.process-cycle-container:hover .process-rotating-parts {
+  animation-play-state: paused;
+}
+.process-center-icon {
+  pointer-events: none;
+}
+
+.cycle-text {
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--color-text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: fill 0.3s ease;
+  pointer-events: none;
+}
+.process-segment {
+  cursor: pointer;
+}
+.segment-bg {
+  fill: var(--color-base-dark-2);
+  transition: fill 0.3s ease;
+}
+.process-segment:hover .segment-bg,
+.process-segment.is-active .segment-bg {
+  fill: var(--color-accent-suma);
+}
+.process-segment:hover .cycle-text,
+.process-segment.is-active .cycle-text {
+  fill: var(--color-text-light);
+}
+.process-segment:nth-child(3) .segment-bg,
+.process-segment:nth-child(4) .segment-bg {
+  fill: var(--color-base-dark-3);
+}
+.process-segment:nth-child(3):hover .segment-bg,
+.process-segment:nth-child(3).is-active .segment-bg,
+.process-segment:nth-child(4):hover .segment-bg,
+.process-segment:nth-child(4).is-active .segment-bg {
+  fill: var(--color-accent-suma-hover);
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.process-description-box {
+  flex: 1;
+  min-height: 200px;
+  text-align: left;
+  padding-left: 20px;
+}
+.description-item h3 {
+  font-size: 2.2rem;
+  color: var(--color-accent-suma);
+  margin: 0 0 15px 0;
+}
+.description-item p {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  max-width: 450px;
+}
+.process-steps, .step, .step:hover, .step-title-line, .step-number, .step h4, .step p, .step::after, .step:not(:last-child)::after, .step:nth-child(1)::after, .step:nth-child(2)::after, .step:nth-child(3)::after, .step:nth-child(4)::after {
+  all: unset;
+  display: none;
+}
+
+
+/* --- 4. Sección Formulario de Contacto (CORREGIDO) --- */
+.contact-section {
+  padding: 80px 0;
+  background-color: var(--color-base-dark); /* Fondo de sección Negro */
+}
+.contact-form {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  background: var(--color-base-dark); /* Fondo de formulario Negro */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-border);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+/* Estilos compartidos para todos los campos */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  background-color: var(--color-base-dark-2);
+  color: var(--color-text-light);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Altura fija para inputs y select (para alinear) */
+.form-group input,
+.form-group select {
+  height: 48px; 
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-accent-suma); /* Resalte Morado */
+  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.3);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-group select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%2C%20width%3D%22292.4%22%2C%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23A0AEC0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20128c3.6%203.6%207.8%205.4%2013%205.4s9.4-1.8%2013-5.4l128-128c3.6-3.6%205.4-7.8%205.4-13%200-5-1.8-9.3-5.4-13z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.8em;
+}
+.form-group select option {
+  background: var(--color-base-dark);
+  color: var(--color-text-light);
+}
+
+/* ========================================= */
+/* === CAMBIO: Botón del Formulario igual al del Hero === */
+.submit-button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  /* Hereda el fondo morado de .cta-button */
+}
+
+/* Añadir el efecto glow al botón del formulario */
+.submit-button:hover {
+  background: var(--color-accent-suma-hover);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(127, 86, 217, 0.5);
+}
+/* ========================================= */
+
+
+/* === INICIO: ESTILOS LIBRERÍA DE TELÉFONO (MODO OSCURO - SEPARADO) === */
+.PhoneInput {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  height: 48px;
+  width: 100%;
+}
+.PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-base-dark-2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.PhoneInputCountry:hover {
+  border-color: var(--color-text-secondary);
+}
+.PhoneInputCountrySelectArrow {
+  color: var(--color-text-secondary); 
+}
+.PhoneInputCountryIcon {
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+.PhoneInputInput {
+  height: 100%;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-base-dark-2);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box; 
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.PhoneInputCountryCallingCode {
+  display: none;
+}
+.PhoneInput--focus .PhoneInputCountry {
+  outline: none;
+  border-color: var(--color-accent-suma);
+  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.3);
+}
+.PhoneInputInput:focus {
+  outline: none;
+  border-color: var(--color-accent-suma);
+  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.3);
+}
+/* === FIN: ESTILOS LIBRERÍA DE TELÉFONO === */
+
+
+/* --- 6. ESTILOS PARA EL POP-UP (MODAL) DE ÉXITO --- */
+/* (Esta sección reemplaza a la anterior .success-message-box) */
+
+/* El fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.85); /* Usa tu color base con transparencia */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* La caja de contenido del modal */
+.modal-content-box {
+  position: relative; /* Clave para posicionar el botón de cerrar */
+  max-width: 600px; /* Un poco más pequeño que el form */
+  width: 90%;
+  padding: 40px;
+  background: var(--color-base-dark-2); 
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* El ícono y textos dentro del modal */
+.modal-content-box .success-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.modal-content-box .section-title {
+  font-size: 2.2rem;
+  margin-bottom: 15px; 
+  color: var(--color-text-light);
+}
+.modal-content-box .section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  color: var(--color-text-secondary);
+}
+
+/* Botón de cerrar (la 'X') */
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.5rem; /* Hace la 'x' más grande */
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+.modal-close-button:hover {
+  color: var(--color-text-light);
+}
+
+
+/* --- Footer (Oscuro) --- */
+.footer {
+  padding: 50px 0;
+  background: var(--color-base-dark);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --- Botón Flotante de WhatsApp (Diseño circular corregido + Glow) --- */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366; /* Mantenemos el verde de WhatsApp */
+  color: white;
+  width: 60px;  /* Tamaño del círculo */
+  height: 60px; /* Tamaño del círculo */
+  border-radius: 50%; /* Forma circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 100;
+  transition: all 0.3s ease; /* Transición suave para todo */
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.05); /* Un hover más sutil */
+  /* Efecto de "iluminado" (glow) con el color verde */
+  box-shadow: 0 0 15px 5px rgba(37, 211, 102, 0.5); 
+  background-color: #28E06C; /* Un verde un poco más brillante */
+}
+
+.whatsapp-fab svg {
+  width: 28px; /* <-- ÍCONO MÁS PEQUEÑO para que no se corte */
+  height: 28px; /* <-- ÍCONO MÁS PEQUEÑO para que no se corte */
+  fill: white;
+}
+
+
+/* --- 7. SECCIÓN DE PARTNERS (LOGO WALL) --- */
+/* --- ¡BLOQUE MODIFICADO SEGÚN TUS 3 REGLAS! --- */
+
+.partners-section {
+  padding: 80px 0;
+  /* 1. Fondo negro (como el body) */
+  background-color: var(--color-base-dark); 
+  /* 3. Sin bordes (eliminados border-top y border-bottom) */
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.partner-logo {
+  /* 2. Alineación y dimensionamiento de la celda */
+  /* Usamos flexbox para centrar el logo perfectamente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px; /* Da un alto mínimo a cada celda */
+  padding: 20px;
+}
+
+.partner-logo img {
+  /* 2. Ajuste de dimensiones de logo */
+  max-width: 180px;  /* Aumentado de 160px */
+  max-height: 80px;  /* Añadido para controlar logos altos/PNGs */
+  width: auto;     /* Asegura que logos más pequeños no se estiren */
+  height: auto;
+  
+  /* Efecto Grayscale (puedes comentarlo si no te gusta) */
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+
+/* --- Responsividad --- */
+@media (max-width: 992px) { /* Tablets */
+    .hero .container {
+        text-align: center;
+        gap: 60px;
+    }
+    .hero-content-centered {
+        max-width: 100%;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero .subtitle {
+        max-width: 100%;
+    }
+    .social-proof {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .process-cycle-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .process-svg-wrapper {
+      max-width: 350px;
+    }
+    .process-description-box {
+      text-align: center;
+      min-height: 100px;
+      padding-left: 0;
+    }
+    .description-item p {
+      max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) { /* Móviles */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links a {
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .hero {
+        padding: 100px 0 120px 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+    .social-proof {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .proof-item {
+        min-width: unset;
+        width: 100%;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Animación del proceso detenida en móvil */
+    .process-rotating-parts {
+      animation: none;
+    }
+    .process-cycle-svg {
+      animation: none;
+    }
+    
+    .cycle-text {
+      font-size: 11px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form {
+        padding: 25px;
+    }
+    .hero-video-bg::-webkit-media-controls {
+        display: none !important;
+    }
+    .hero-video-bg::media-controls {
+        display: none !important;
+    }
+
+    /* --- Regla responsive para Partners --- */
+    .partners-grid {
+      /* 2 columnas en móvil */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+}
+
+/* === Definición de la Animación "Ken Burns" === */
+@keyframes kenburns-effect {
+  /* Estado inicial (sin zoom) */
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Estado final (un 10% de zoom) */
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
