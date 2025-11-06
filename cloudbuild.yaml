@@ -47,4 +47,4 @@ substitutions:
   
   # --- ¡LÍNEA NUEVA AÑADIDA! ---
   # Define la variable con la URL de tu backend
-  _VITE_API_URL: 'https://sumadots-website-backend-56755484181.europe-west1.run.app'
+  _VITE_API_URL: 'https://sumadots-website-submitform-56755484181.europe-west1.run.app'
