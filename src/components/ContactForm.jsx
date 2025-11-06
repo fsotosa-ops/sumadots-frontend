@@ -54,15 +54,20 @@ function ContactForm() {
     // No necesitamos enviar 'rubro_otro' a la API
     delete fullData.rubro_otro; 
 
+    // --- ¡¡ESTA ES LA SECCIÓN MODIFICADA!! ---
+    // 1. Lee la variable de entorno (Vite se encarga de elegir el .env correcto)
+    const apiUrl = import.meta.env.VITE_API_URL;
+    
     try {
-      // Apunta a tu backend local (o el de producción cuando lo despliegues)
-      const response = await fetch('http://localhost:8080/api/submit-form', { 
+      // 2. Apunta a la URL de la variable (sea local o producción)
+      const response = await fetch(`${apiUrl}/api/submit-form`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(fullData), // 'fullData' ahora incluye la URL
       });
+    // --- FIN DE LA SECCIÓN MODIFICADA ---
 
       if (!response.ok) {
         throw new Error('Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.');
