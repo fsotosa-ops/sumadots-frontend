@@ -5,6 +5,12 @@ steps:
       - 'build'
       - '-t'
       - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      
+      # --- ¡LÍNEA NUEVA AÑADIDA! ---
+      # Pasa la variable _VITE_API_URL al Dockerfile como un argumento de build
+      - '--build-arg'
+      - 'VITE_API_URL=${_VITE_API_URL}'
+      
       - '.'
 
   # 2. Subir la imagen a Artifact Registry (recomendado sobre GCR)
@@ -36,5 +42,9 @@ images:
 # Puedes definirlas aquí o en la configuración del Trigger.
 substitutions:
   _SERVICE_NAME: 'sumadots-frontend'
-  _REGION: 'europe-west1' # Lo saqué de la captura de pantalla de tu trigger
-  _REPO_NAME: 'sumadots-frontend' # El nombre del repositorio en Artifact Registry
+  _REGION: 'europe-west1' 
+  _REPO_NAME: 'sumadots-frontend' 
+  
+  # --- ¡LÍNEA NUEVA AÑADIDA! ---
+  # Define la variable con la URL de tu backend
+  _VITE_API_URL: 'https://sumadots-website-backend-56755484181.europe-west1.run.app'
