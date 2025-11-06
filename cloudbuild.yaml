@@ -38,9 +38,9 @@ images:
 # Variables de sustitución.
 # Puedes definirlas aquí o en la configuración del Trigger.
 substitutions:
-  _SERVICE_NAME: 'sumadots-frontend'
+  _SERVICE_NAME: 'sumadots-frontend-website'
   _REGION: 'europe-west1' 
-  _REPO_NAME: 'sumadots-frontend' 
+  _REPO_NAME: 'cloud-run-source-deploy' 
   
   # --- ¡LÍNEA NUEVA AÑADIDA! ---
   # Define la variable con la URL de tu backend
