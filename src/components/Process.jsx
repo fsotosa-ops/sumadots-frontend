@@ -125,10 +125,10 @@ function Process() {
               {/* El ícono ahora es más grande (120x120) y está centrado (140, 140) */}
               <image 
                 href={logoSumaIcon} 
-                x="68" 
-                y="68" 
-                height="264" 
-                width="264" 
+                x="100" 
+                y="100" 
+                height="200" 
+                width="200" 
                 className="process-center-icon"
               />
               {/* ========================================= */}
