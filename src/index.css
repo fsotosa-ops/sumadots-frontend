@@ -804,3 +804,94 @@ header {
     transform: translate(-50%, -50%) scale(1.1);
   }
 }
+
+/* ========================================= */
+/* === ESTILOS AÑADIDOS PARA EL BLOG === */
+/* ========================================= */
+
+/* 1. Estilo para el NavLink activo en el Header */
+.nav-links a.active {
+  color: var(--color-accent-suma); /* Color morado de tu marca */
+  font-weight: 700;
+}
+
+/* 2. Estilos para la imagen de la tarjeta del blog */
+.article-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 20px;
+  border: 1px solid var(--color-border);
+}
+
+/* 3. Estilos para los tags en la tarjeta */
+.article-card-tags {
+  margin-top: 20px;
+}
+.article-card-tags span {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: rgba(127, 86, 217, 0.1); /* Fondo morado translúcido */
+  color: var(--color-accent-suma);
+}
+
+/* 4. Enlace "Volver" en la página del artículo */
+.article-back-link {
+  display: inline-block;
+  color: var(--color-accent-suma);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.article-back-link:hover {
+  color: var(--color-accent-suma-hover);
+  text-decoration: underline;
+}
+
+/* 5. Estilos para el contenido del artículo (Prose) */
+.prose {
+  max-width: 750px; /* Ancho de lectura cómodo */
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--color-text-light);
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+.prose p {
+  margin-bottom: 1.5em;
+}
+.prose a {
+  color: var(--color-accent-suma);
+  text-decoration: underline;
+}
+.prose img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 2em 0;
+}
+.prose blockquote {
+  border-left: 4px solid var(--color-accent-suma);
+  padding-left: 1.5em;
+  margin: 2em 0;
+  font-style: italic;
+  color: var(--color-text-light);
+}
+.prose ul, .prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}

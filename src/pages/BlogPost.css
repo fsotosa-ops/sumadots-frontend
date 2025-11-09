@@ -1,0 +1,110 @@
+/* Archivo: src/pages/BlogPost.css */
+/* --- CÓDIGO ACTUALIZADO (CON TEXTO JUSTIFICADO) --- */
+
+/* --- Estilos del Post --- */
+.blog-post {
+    padding: 80px 0;
+    color: var(--color-text-secondary);
+  }
+  
+/* Contenedor estrecho para legibilidad */
+.container-narrow {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Título principal del post */
+.blog-post h1 {
+  font-size: 3rem;
+  color: var(--color-text-light);
+  line-height: 1.2;
+  margin-bottom: 10px; 
+}
+
+/* Estilo para la fecha */
+.blog-post-date {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+}
+
+/* Imagen destacada */
+.blog-post-featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 30px; 
+}
+
+/* Resumen (debajo de la imagen) */
+.blog-post-excerpt {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Estilos para el contenido Rich Text --- */
+.blog-post-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.blog-post-content p {
+  margin-bottom: 1.5em;
+  
+  /* --- ¡ESTE ES EL CAMBIO! --- */
+  /* Alinea el texto a ambos márgenes */
+  text-align: justify;
+}
+
+.blog-post-content h2 {
+  font-size: 2rem;
+  color: var(--color-text-light);
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+}
+
+.blog-post-content h3 {
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.blog-post-content a {
+  color: var(--color-accent-suma);
+  text-decoration: none;
+  font-weight: 600;
+}
+.blog-post-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.5em;
+}
+
+.blog-post-content blockquote {
+  border-left: 4px solid var(--color-accent-suma);
+  padding-left: 1.5em;
+  margin-left: 0;
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+/* --- Estilos del CTA (Formulario) --- */
+.post-cta-wrapper {
+  margin: 60px 0; 
+  text-align: center;
+}

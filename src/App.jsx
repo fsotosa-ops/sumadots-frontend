@@ -1,28 +1,28 @@
 // Archivo: src/App.jsx
+import { Routes, Route } from 'react-router-dom';
 
-// 1. Importamos todos los componentes
+// 1. Importa tus componentes actuales
 import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import Services from './components/Services.jsx';
-//import Customers from './components/Customers.jsx'; // <-- 1. IMPORTA EL NUEVO COMPONENTE
-import Process from './components/Process.jsx';
-import Partners from './components/Partners.jsx';
-import ContactForm from './components/ContactForm.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppButton from './components/WhatsappButton.jsx';
 
+// 2. Importa las nuevas "Páginas" que crearemos
+import HomePage from './pages/HomePage.jsx'; // Renombraremos tu lógica actual a una "página"
+import BlogPage from './pages/BlogPage.jsx';   // La nueva lista de artículos
+import BlogPost from './pages/BlogPost.jsx'; // El nuevo post individual
+
 function App() {
   return (
-    // 2. Los organizamos
     <>
       <Header />
       
       <main>
-        <Hero />
-        <Services />
-        <Process />
-        <Partners/>
-        <ContactForm />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          {/* Puedes añadir más rutas aquí, ej: <Route path="/contacto" element={<ContactPage />} /> */}
+        </Routes>
       </main>
 
       <Footer />

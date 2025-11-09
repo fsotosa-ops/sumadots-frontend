@@ -1,0 +1,77 @@
+/* Archivo: src/components/NewsletterForm.css */
+
+.newsletter-form-wrapper {
+    width: 100%;
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrarlo */
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 10px; /* Espacio entre input y botón */
+    margin-top: 30px;
+  }
+  
+  /* Estilo para el input (basado en tu index.css) */
+  .newsletter-input {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    height: 48px; 
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: var(--color-base-dark-2);
+    color: var(--color-text-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-accent-suma); /* Resalte Morado */
+    box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.3);
+  }
+  
+  /* Botón de Suscripción */
+  .newsletter-cta-button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Mismo radio que el input */
+    flex-shrink: 0; 
+    height: 48px; /* Misma altura que el input */
+  }
+  
+  .newsletter-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(127, 86, 217, 0.5);
+  }
+  
+  .newsletter-cta-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Mensajes de estado (éxito/error) */
+  .form-message {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .form-message.success {
+    color: #25D366; /* Verde */
+  }
+  .form-message.error {
+    color: #e53e3e; /* Rojo */
+  }
+  
+  /* Responsividad del formulario */
+  @media (max-width: 768px) {
+    .newsletter-form {
+      flex-direction: column; 
+      gap: 15px;
+      align-items: stretch; 
+    }
+  }

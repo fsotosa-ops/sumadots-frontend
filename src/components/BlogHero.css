@@ -1,0 +1,67 @@
+/* Archivo: src/components/BlogHero.css */
+/* --- CÓDIGO ACTUALIZADO (MÁS LIMPIO) --- */
+
+.blog-hero {
+    padding: 0;
+    background-color: var(--color-base-dark); 
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+  
+  .hero-banner-wrapper {
+    width: 100%;
+    background-color: transparent; 
+    max-height: 450px; 
+    overflow: hidden; 
+  }
+  
+  .hero-banner-image {
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  
+  /* --- Estilos para el texto (que ya está dentro de .container) --- */
+  .hero-text {
+    text-align: center;
+    padding: 50px 0; 
+  }
+  
+  .hero-text .section-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text .section-subtitle {
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto; 
+    color: var(--color-text-secondary);
+  }
+  
+  .hero-text .highlight-suma {
+    color: var(--color-accent-suma);
+  }
+  
+  .hero-text .section-subtitle i {
+    font-style: normal;
+    color: var(--color-text-light);
+    font-weight: 600;
+  }
+  
+  /* --- Responsividad --- */
+  @media (max-width: 768px) {
+    .hero-banner-wrapper {
+       max-height: 250px;
+    }
+    .hero-text {
+      padding: 30px 20px;
+    }
+    .hero-text .section-title {
+      font-size: 2.5rem;
+    }
+  }
