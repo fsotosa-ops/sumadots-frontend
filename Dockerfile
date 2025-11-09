@@ -13,8 +13,9 @@ COPY . .
 # --- ¡NUEVO! ---
 # Crea el archivo .env.production DENTRO del contenedor.
 # Vite lo leerá automáticamente al hacer el build.
-RUN echo "VITE_API_URL=${VITE_API_URL}" > .env.production
-
+RUN echo "VITE_API_URL=${VITE_API_URL}" > .env
+RUN echo "VITE_CONTENTFUL_SPACE_ID=${VITE_CONTENTFUL_SPACE_ID}" >> .env
+RUN echo "VITE_CONTENTFUL_ACCESS_TOKEN=${VITE_CONTENTFUL_ACCESS_TOKEN}" >> .env
 # Ahora, cuando se ejecute build, VITE_API_URL existirá
 RUN npm run build
 
