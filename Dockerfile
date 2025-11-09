@@ -4,6 +4,8 @@ FROM node:20-alpine AS build
 # --- ¡NUEVO! ---
 # Declara el argumento de build que recibiremos de cloudbuild.yaml
 ARG VITE_API_URL
+ARG VITE_CONTENTFUL_SPACE_ID
+ARG VITE_CONTENTFUL_ACCESS_TOKEN
 
 WORKDIR /app
 COPY package.json package-lock.json ./
